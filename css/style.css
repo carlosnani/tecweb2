@@ -1,0 +1,13 @@
+body {
+    background: #eee;
+}
+.cadastrados {
+    background: #fff;
+    overflow: hidden;
+}
+.delete {
+    color: rgb(255, 255, 255);
+    float: right;
+    padding:0 6px;
+
+}
