@@ -45,7 +45,7 @@
     <h1 class="mt-5">Cadastro de Funcionários</h1>
     <div class="row">
         <div class="col-md-6 my-2 cadastro">
-           <form form action="tabela.php" method="post">
+           <form form action="repostacadastro.php" method="post">
            <div class="form-group">
                   <label for="nome">Nome</label>
                       <input type="text" name="name" class="form-control" placeholder="Nome">
