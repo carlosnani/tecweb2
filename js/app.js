@@ -1,63 +1,12 @@
-let cadastrarFuncionario = document.querySelector('#cadastrarF');
 
-let funcionarioLista = [];
-let depedenteLista = [];
+let adicionarDepedente = document.querySelector('#adicionarDepedente');
+adicionarDepedente.addEventListener('click', adicionarCampoDepedente)
 
-cadastrarFuncionario.addEventListener('click' , enviarCadastro)
+let value = 0;
 
-function enviarCadastro() {
-    let nomeFuncionario = document.querySelector('#nomeFun').value;
-    let idadeFuncionario = document.querySelector('#idade').value;
-   
-    if(nomeFuncionario === '' && idadeFuncionario ==='') {
-          alert('Os Campos Nome e Idade não podem estar vazios');
-    }  else {            
-    funcionario = {
-        nomeFuncionario: nomeFuncionario,
-        idadeFuncionario: idadeFuncionario
-    }; 
-    limparCampoFuncionario();
-
-    funcionarioLista.push(funcionario); 
-    } 
+function adicionarCampoDepedente(){
+    let tabelaDepedentes = document.querySelector('#tabelaDepedentes');
+    tabelaDepedentes.innerHTML += 
+    '<div class="form-group"><label for="nome">Nome</label> <input id="nomeDepedente_'+ value++ +'"  type="text" name="nodeDepedente" class="form-control" placeholder="Nome"><small id="nameHelp" class="form-text text-muted">Nome completo</small><label for="name">Idade</label><input type="number" name="idadeDepedente" min="0" max="18" id="idade" class="form-control"><small id="iadadeHelp" class="form-text text-muted">Apenas Menores de 18</small></div>'
 }
-
-function limparCampoFuncionario() { //Limpa os Campos de Cadastro Nome e Idade
-    let nomeFuncionario = document.querySelector('#nomeFun').value = '';
-    let idadeFuncionario = document.querySelector('#idade').value = '';
-}
-
-let cadastrarDepedente = document.querySelector('#cadastrarDepedente'); // Btn
-cadastrarDepedente.addEventListener('click' , adicionarDepedente); 
-
-function adicionarDepedente() {
-    let nomeDepedente = document.querySelector('#nomeDepedente').value;
-    let idadeDepedente = document.querySelector('#idadeDepedente').value;    
-    if(nomeDepedente === '' && idadeDepedente ==='') {
-        alert('Os Campos Nome e Idade não podem estar vazios');
-    } else {
-    depedente = {
-        nomeDepedente: nomeDepedente,
-        idadeDepedente: idadeDepedente 
-    }; 
-    depedenteLista.push(depedente); 
-    } 
-    atuaizarTela();
-    limparCampoDepedente();
-}
-
-function atuaizarTela(){   
-    let depedenteItem = '<li class="list-group-item animated bounceInUp"><strong>Nome:</strong>' + depedente.nomeDepedente + ' | <strong>Idade:</strong> ' + depedente.idadeDepedente + '</li>'
-    document.getElementById('tabelaDepedentes').innerHTML += depedenteItem;
-};  
-
-
-function limparCampoDepedente(){
-    let nomeDepedente = document.querySelector('#nomeDepedente').value = '';
-    let idadeDepedente = document.querySelector('#idadeDepedente').value = '';  
-}
-
-
-
-
 
